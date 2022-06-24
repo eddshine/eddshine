@@ -1,6 +1,6 @@
 # This is a basic workflow to help you get started with Actions
 
-name: DevCard
+#name: DevCard
 
 # Controls when the workflow will run
 #on:
@@ -37,6 +37,9 @@ name: DevCard
           
           
           
+
+name: DevCard
+
 permissions:
   contents: write
 
@@ -47,17 +50,13 @@ on:
       - main
   schedule:
     - cron: "0 0 * * *"
-    
-    
-    
+
 jobs:
   devcard:
     runs-on: ubuntu-latest
     steps:
       - name: devcard
-        uses: dailydotdev/action-devcard@2.0.4
+        uses: dailydotdev/action-devcard@2.0.2
         with:
-          devcard_id: ${{ secrets.3a5df7de0aa5455d82f65c659a4bfab6 }}
-    
-    
+          devcard_id: ${{ secrets.DEVCARD_ID }}
     
